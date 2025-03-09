@@ -214,3 +214,126 @@ P7 Conflicts : 0
 P7 Decisions : 0
 P7 Result    : unsat
 ```
+
+Trying to partition on first 3 decisions (original problem): 
+```
+python3.11 run_partitions.py -if NoriSharma-2013FSE-Fig8_true-termination.c_Iteration1_Lasso_4-pieceTemplate.smt2 -p  ~/repos/main_cvc5/cvc5/build/bin/cvc5 -cbp 1
+Generated partitions 8 in 2.513467311859131 seconds
+(and (not (>= (+ (* (- 1) si12583c) (* 2 motzkin_12582_1) motzkin_12582_2 (* (- 1) motzkin_12582_3) (* (- 1) motzkin_12582_4) motzkin_12582_5) 0)) (>= (+ (* (- 1) motzkin_13709_4) motzkin_13709_5 motzkin_13715_5 (* (- 1) motzkin_13715_6)) 0) (>= (+ (* (- 1) si12833c) motzkin_13715_3 (* (- 1) motzkin_13715_4) (* (- 1) motzkin_13715_5) motzkin_13715_6) 0))
+(and (not (>= (+ (* (- 1) si12583c) (* 2 motzkin_12582_1) motzkin_12582_2 (* (- 1) motzkin_12582_3) (* (- 1) motzkin_12582_4) motzkin_12582_5) 0)) (>= (+ (* (- 1) motzkin_13709_4) motzkin_13709_5 motzkin_13715_5 (* (- 1) motzkin_13715_6)) 0) (not (>= (+ (* (- 1) si12833c) motzkin_13715_3 (* (- 1) motzkin_13715_4) (* (- 1) motzkin_13715_5) motzkin_13715_6) 0)))
+(and (not (>= (+ (* (- 1) si12583c) (* 2 motzkin_12582_1) motzkin_12582_2 (* (- 1) motzkin_12582_3) (* (- 1) motzkin_12582_4) motzkin_12582_5) 0)) (not (>= (+ (* (- 1) motzkin_13709_4) motzkin_13709_5 motzkin_13715_5 (* (- 1) motzkin_13715_6)) 0)) (>= (+ (* (- 1) si12833c) motzkin_13715_3 (* (- 1) motzkin_13715_4) (* (- 1) motzkin_13715_5) motzkin_13715_6) 0))
+(and (not (>= (+ (* (- 1) si12583c) (* 2 motzkin_12582_1) motzkin_12582_2 (* (- 1) motzkin_12582_3) (* (- 1) motzkin_12582_4) motzkin_12582_5) 0)) (not (>= (+ (* (- 1) motzkin_13709_4) motzkin_13709_5 motzkin_13715_5 (* (- 1) motzkin_13715_6)) 0)) (not (>= (+ (* (- 1) si12833c) motzkin_13715_3 (* (- 1) motzkin_13715_4) (* (- 1) motzkin_13715_5) motzkin_13715_6) 0)))
+(and (not (not (>= (+ (* (- 1) si12583c) (* 2 motzkin_12582_1) motzkin_12582_2 (* (- 1) motzkin_12582_3) (* (- 1) motzkin_12582_4) motzkin_12582_5) 0))) (>= (+ (* (- 1) motzkin_13709_4) motzkin_13709_5 motzkin_13715_5 (* (- 1) motzkin_13715_6)) 0) (>= (+ (* (- 1) si12833c) motzkin_13715_3 (* (- 1) motzkin_13715_4) (* (- 1) motzkin_13715_5) motzkin_13715_6) 0))
+(and (not (not (>= (+ (* (- 1) si12583c) (* 2 motzkin_12582_1) motzkin_12582_2 (* (- 1) motzkin_12582_3) (* (- 1) motzkin_12582_4) motzkin_12582_5) 0))) (>= (+ (* (- 1) motzkin_13709_4) motzkin_13709_5 motzkin_13715_5 (* (- 1) motzkin_13715_6)) 0) (not (>= (+ (* (- 1) si12833c) motzkin_13715_3 (* (- 1) motzkin_13715_4) (* (- 1) motzkin_13715_5) motzkin_13715_6) 0)))
+(and (not (not (>= (+ (* (- 1) si12583c) (* 2 motzkin_12582_1) motzkin_12582_2 (* (- 1) motzkin_12582_3) (* (- 1) motzkin_12582_4) motzkin_12582_5) 0))) (not (>= (+ (* (- 1) motzkin_13709_4) motzkin_13709_5 motzkin_13715_5 (* (- 1) motzkin_13715_6)) 0)) (>= (+ (* (- 1) si12833c) motzkin_13715_3 (* (- 1) motzkin_13715_4) (* (- 1) motzkin_13715_5) motzkin_13715_6) 0))
+(and (not (not (>= (+ (* (- 1) si12583c) (* 2 motzkin_12582_1) motzkin_12582_2 (* (- 1) motzkin_12582_3) (* (- 1) motzkin_12582_4) motzkin_12582_5) 0))) (not (>= (+ (* (- 1) motzkin_13709_4) motzkin_13709_5 motzkin_13715_5 (* (- 1) motzkin_13715_6)) 0)) (not (>= (+ (* (- 1) si12833c) motzkin_13715_3 (* (- 1) motzkin_13715_4) (* (- 1) motzkin_13715_5) motzkin_13715_6) 0)))
+P0 Solve Time: 251.07379508018494
+P0 Resources : 10416036
+P0 Conflicts : 13359
+P0 Decisions : 1993343
+P0 Result    : unsat
+
+P1 Solve Time: 183.69241499900818
+P1 Resources : 8303337
+P1 Conflicts : 10170
+P1 Decisions : 1600645
+P1 Result    : unsat
+
+P2 Solve Time: 2.0732028484344482
+P2 Resources : 1671483
+P2 Conflicts : 7
+P2 Decisions : 13
+P2 Result    : unsat
+
+P3 Solve Time: 2.025279998779297
+P3 Resources : 1671491
+P3 Conflicts : 7
+P3 Decisions : 12
+P3 Result    : unsat
+
+P4 Solve Time: 249.23270797729492
+P4 Resources : 9214155
+P4 Conflicts : 12201
+P4 Decisions : 1817390
+P4 Result    : unsat
+
+P5 Solve Time: 117.62706708908081
+P5 Resources : 7784935
+P5 Conflicts : 9410
+P5 Decisions : 1475603
+P5 Result    : unsat
+
+P6 Solve Time: 2.120968818664551
+P6 Resources : 1671466
+P6 Conflicts : 7
+P6 Decisions : 13
+P6 Result    : unsat
+
+P7 Solve Time: 2.0804998874664307
+P7 Resources : 1671474
+P7 Conflicts : 7
+P7 Decisions : 12
+P7 Result    : unsat
+```
+
+
+Partitioning on first 3 decisions (simplified problem):
+```
+python3.11 run_partitions.py -if ~/repos/SMTExamples/NoriSimp.smt2 -p  ~/repos/main_cvc5/cvc5/build/bin/cvc5 -cbp 1 
+Generated partitions 8 in 2.42874813079834 seconds
+(let ((_let_1 (* (- 1) motzkin_13715_6))) (and (not (>= (+ (* (- 1) si12585c) (* 2 motzkin_12584_1) motzkin_12584_2 (* (- 1) motzkin_12584_3) (* (- 1) motzkin_12584_4) motzkin_12584_5) 0)) (not (>= (+ (* (- 1) motzkin_13715_3) motzkin_13715_4 motzkin_13715_5 _let_1) 0)) (>= (+ motzkin_13715_5 _let_1) 0)))
+(let ((_let_1 (* (- 1) motzkin_13715_6))) (and (not (>= (+ (* (- 1) si12585c) (* 2 motzkin_12584_1) motzkin_12584_2 (* (- 1) motzkin_12584_3) (* (- 1) motzkin_12584_4) motzkin_12584_5) 0)) (not (>= (+ (* (- 1) motzkin_13715_3) motzkin_13715_4 motzkin_13715_5 _let_1) 0)) (not (>= (+ motzkin_13715_5 _let_1) 0))))
+(let ((_let_1 (* (- 1) motzkin_13715_6))) (and (not (>= (+ (* (- 1) si12585c) (* 2 motzkin_12584_1) motzkin_12584_2 (* (- 1) motzkin_12584_3) (* (- 1) motzkin_12584_4) motzkin_12584_5) 0)) (not (not (>= (+ (* (- 1) motzkin_13715_3) motzkin_13715_4 motzkin_13715_5 _let_1) 0))) (>= (+ motzkin_13715_5 _let_1) 0)))
+(let ((_let_1 (* (- 1) motzkin_13715_6))) (and (not (>= (+ (* (- 1) si12585c) (* 2 motzkin_12584_1) motzkin_12584_2 (* (- 1) motzkin_12584_3) (* (- 1) motzkin_12584_4) motzkin_12584_5) 0)) (not (not (>= (+ (* (- 1) motzkin_13715_3) motzkin_13715_4 motzkin_13715_5 _let_1) 0))) (not (>= (+ motzkin_13715_5 _let_1) 0))))
+(let ((_let_1 (* (- 1) motzkin_13715_6))) (and (not (not (>= (+ (* (- 1) si12585c) (* 2 motzkin_12584_1) motzkin_12584_2 (* (- 1) motzkin_12584_3) (* (- 1) motzkin_12584_4) motzkin_12584_5) 0))) (not (>= (+ (* (- 1) motzkin_13715_3) motzkin_13715_4 motzkin_13715_5 _let_1) 0)) (>= (+ motzkin_13715_5 _let_1) 0)))
+(let ((_let_1 (* (- 1) motzkin_13715_6))) (and (not (not (>= (+ (* (- 1) si12585c) (* 2 motzkin_12584_1) motzkin_12584_2 (* (- 1) motzkin_12584_3) (* (- 1) motzkin_12584_4) motzkin_12584_5) 0))) (not (>= (+ (* (- 1) motzkin_13715_3) motzkin_13715_4 motzkin_13715_5 _let_1) 0)) (not (>= (+ motzkin_13715_5 _let_1) 0))))
+(let ((_let_1 (* (- 1) motzkin_13715_6))) (and (not (not (>= (+ (* (- 1) si12585c) (* 2 motzkin_12584_1) motzkin_12584_2 (* (- 1) motzkin_12584_3) (* (- 1) motzkin_12584_4) motzkin_12584_5) 0))) (not (not (>= (+ (* (- 1) motzkin_13715_3) motzkin_13715_4 motzkin_13715_5 _let_1) 0))) (>= (+ motzkin_13715_5 _let_1) 0)))
+(let ((_let_1 (* (- 1) motzkin_13715_6))) (and (not (not (>= (+ (* (- 1) si12585c) (* 2 motzkin_12584_1) motzkin_12584_2 (* (- 1) motzkin_12584_3) (* (- 1) motzkin_12584_4) motzkin_12584_5) 0))) (not (not (>= (+ (* (- 1) motzkin_13715_3) motzkin_13715_4 motzkin_13715_5 _let_1) 0))) (not (>= (+ motzkin_13715_5 _let_1) 0))))
+P0 Solve Time: 156.8487629890442
+P0 Resources : 6515855
+P0 Conflicts : 11110
+P0 Decisions : 1058360
+P0 Result    : unsat
+
+P1 Solve Time: 144.87387919425964
+P1 Resources : 7204251
+P1 Conflicts : 10248
+P1 Decisions : 1240529
+P1 Result    : unsat
+
+P2 Solve Time: 421.9641230106354
+P2 Resources : 12480049
+P2 Conflicts : 18580
+P2 Decisions : 2196620
+P2 Result    : unsat
+
+P3 Solve Time: 241.69115114212036
+P3 Resources : 8776293
+P3 Conflicts : 13043
+P3 Decisions : 1555306
+P3 Result    : unsat
+
+P4 Solve Time: 301.14756083488464
+P4 Resources : 10334048
+P4 Conflicts : 12870
+P4 Decisions : 1822013
+P4 Result    : unsat
+
+P5 Solve Time: 353.62824034690857
+P5 Resources : 9620390
+P5 Conflicts : 15059
+P5 Decisions : 1560440
+P5 Result    : unsat
+
+P6 Solve Time: 215.91140484809875
+P6 Resources : 8234732
+P6 Conflicts : 11912
+P6 Decisions : 1445212
+P6 Result    : unsat
+
+P7 Solve Time: 178.16045308113098
+P7 Resources : 7130754
+P7 Conflicts : 9830
+P7 Decisions : 1114130
+P7 Result    : unsat
+```
