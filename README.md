@@ -337,3 +337,146 @@ P7 Conflicts : 9830
 P7 Decisions : 1114130
 P7 Result    : unsat
 ```
+
+
+
+When using the same partitions for original and simplified problem, behavior is preserved: 
+
+```
+python3.11 run_cvc5.py -if NoriSharma-2013FSE-Fig8_true-termination.c_Iteration1_Lasso_4-pieceTemplate.smt2
+Solve Time: 59.936448097229004
+Resources : 6512094
+Conflicts : 7444
+Decisions : 1366571
+Result    : unsat
+```
+
+```
+python3.11 run_set_partitions.py -if NoriSharma-2013FSE-Fig8_true-termination.c_Iteration1_Lasso_4-pieceTemplate.smt2 -p  ~/repos/main_cvc5/cvc5/build/bin/cvc5
+Generated partitions 8 in 0.0 seconds
+(and (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0) (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0) (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0))
+(and (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0) (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0) (not (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0)))
+(and (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0) (not (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0)) (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0))
+(and (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0) (not (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0)) (not (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0)))
+(and (not (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0)) (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0) (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0))
+(and (not (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0)) (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0) (not (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0)))
+(and (not (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0)) (not (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0)) (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0))
+(and (not (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0)) (not (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0)) (not (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0)))
+P0 Solve Time: 111.75183367729187
+P0 Resources : 7178770
+P0 Conflicts : 8812
+P0 Decisions : 1312799
+P0 Result    : unsat
+
+P1 Solve Time: 1.9607698917388916
+P1 Resources : 1671274
+P1 Conflicts : 0
+P1 Decisions : 0
+P1 Result    : unsat
+
+P2 Solve Time: 1.9564340114593506
+P2 Resources : 1671274
+P2 Conflicts : 0
+P2 Decisions : 0
+P2 Result    : unsat
+
+P3 Solve Time: 1.9480340480804443
+P3 Resources : 1671279
+P3 Conflicts : 0
+P3 Decisions : 0
+P3 Result    : unsat
+
+P4 Solve Time: 2.1038482189178467
+P4 Resources : 1671274
+P4 Conflicts : 0
+P4 Decisions : 0
+P4 Result    : unsat
+
+P5 Solve Time: 2.011591911315918
+P5 Resources : 1671279
+P5 Conflicts : 0
+P5 Decisions : 0
+P5 Result    : unsat
+
+P6 Solve Time: 1.9415302276611328
+P6 Resources : 1671279
+P6 Conflicts : 0
+P6 Decisions : 0
+P6 Result    : unsat
+
+P7 Solve Time: 1.912503957748413
+P7 Resources : 1671284
+P7 Conflicts : 0
+P7 Decisions : 0
+P7 Result    : unsat
+```
+
+```
+python3.11 run_cvc5.py -if ~/repos/SMTExamples/NoriSimp.smt2                                                                     
+Solve Time: 237.34437561035156
+Resources : 8393776
+Conflicts : 12806
+Decisions : 1201971
+Result    : unsat
+```
+
+
+```
+python3.11 run_set_partitions.py -if ~/repos/SMTExamples/NoriSimp.smt2 -p  ~/repos/main_cvc5/cvc5/build/bin/cvc5                 
+Generated partitions 8 in 3.814697265625e-06 seconds
+(and (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0) (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0) (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0))
+(and (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0) (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0) (not (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0)))
+(and (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0) (not (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0)) (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0))
+(and (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0) (not (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0)) (not (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0)))
+(and (not (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0)) (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0) (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0))
+(and (not (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0)) (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0) (not (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0)))
+(and (not (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0)) (not (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0)) (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0))
+(and (not (>= (+ motzkin_13490_0 (* (- 1) motzkin_13490_1) motzkin_13490_3 (* (- 1) motzkin_13490_4)) 0)) (not (>= (+ (* (- 1) motzkin_13490_0) motzkin_13490_1 motzkin_13490_5) 0)) (not (>= (+ (* (- 1) motzkin_13490_3) motzkin_13490_4) 0)))
+P0 Solve Time: 372.96286487579346
+P0 Resources : 11373584
+P0 Conflicts : 16814
+P0 Decisions : 2051978
+P0 Result    : unsat
+
+P1 Solve Time: 1.9026298522949219
+P1 Resources : 1565608
+P1 Conflicts : 0
+P1 Decisions : 0
+P1 Result    : unsat
+
+P2 Solve Time: 1.9681987762451172
+P2 Resources : 1565608
+P2 Conflicts : 0
+P2 Decisions : 0
+P2 Result    : unsat
+
+P3 Solve Time: 1.8368699550628662
+P3 Resources : 1565613
+P3 Conflicts : 0
+P3 Decisions : 0
+P3 Result    : unsat
+
+P4 Solve Time: 1.8750169277191162
+P4 Resources : 1565608
+P4 Conflicts : 0
+P4 Decisions : 0
+P4 Result    : unsat
+
+P5 Solve Time: 1.984494924545288
+P5 Resources : 1565613
+P5 Conflicts : 0
+P5 Decisions : 0
+P5 Result    : unsat
+
+P6 Solve Time: 2.0130341053009033
+P6 Resources : 1565613
+P6 Conflicts : 0
+P6 Decisions : 0
+P6 Result    : unsat
+
+P7 Solve Time: 2.064584970474243
+P7 Resources : 1565618
+P7 Conflicts : 0
+P7 Decisions : 0
+P7 Result    : unsat
+```
